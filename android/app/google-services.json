@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "738357942680",
+    "project_id": "icb-apps",
+    "storage_bucket": "icb-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738357942680:android:c9f92620cbfe4ccaa833ed",
+        "android_client_info": {
+          "package_name": "com.example.icbadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738357942680-at0br42aqrmphii51ina5ct042rqmhho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqF09rdDoxtfWViWXaIBXDUaX12lkBs_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738357942680-at0br42aqrmphii51ina5ct042rqmhho.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "738357942680-aot5orskmnd8216uq494knao3bsojnvq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.icbapps"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738357942680:android:cd8c9a0e91cc31bda833ed",
+        "android_client_info": {
+          "package_name": "com.example.icbapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738357942680-at0br42aqrmphii51ina5ct042rqmhho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqF09rdDoxtfWViWXaIBXDUaX12lkBs_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738357942680-at0br42aqrmphii51ina5ct042rqmhho.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "738357942680-aot5orskmnd8216uq494knao3bsojnvq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.icbapps"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
