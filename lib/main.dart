@@ -7,6 +7,7 @@ import 'package:icbadmin/firebase.dart';
 import 'package:icbadmin/rechargemodel.dart';
 
 import 'firebase_options.dart';
+import 'noticeadd.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
   FirebaseAuth auth = FirebaseAuth.instance;
   bool withdraw = true;
 
+
   @override
   void initState() {
     // TODO: implement initState
@@ -61,7 +63,11 @@ class _HomeScreenState extends State<HomeScreen> {
             this.setState(() {
               withdraw=!withdraw;
             });
-          }, child: Text(withdraw?"withdraw":"recharge"))
+          }, child: Text(withdraw?"withdraw":"recharge")),
+          TextButton(onPressed: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>NoticeAdd()));
+
+          }, child: Text("Notice"))
         ],
       ),
       body: StreamBuilder(
@@ -78,14 +84,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             return ListTile(
                               title: Text("${s.data![index].number}"),
                               subtitle: Text("${s.data![index].amount}"),
-                              trailing: Expanded(
-
-                                child: !s.data![index].granted? IconButton(onPressed: ()async{
+                              trailing: !s.data![index].granted? IconButton(onPressed: ()async{
 
                                   await fireBase.allowWithdraw(s.data![index].uid!);
 
                                 }, icon: Icon(Icons.add)):SizedBox.shrink()
-                              ),
+                              ,
                             );
                           }
                       ):CircularProgressIndicator();
@@ -99,14 +103,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             return ListTile(
                               title: Text("${s.data![index].transactionId}"),
                               subtitle: Text("${s.data![index].amount}"),
-                              trailing: Expanded(
+                              trailing:IconButton(onPressed: ()async{
 
-                                  child: IconButton(onPressed: ()async{
+                              await fireBase.acceptRecharge(s.data![index]);
 
-                                    await fireBase.acceptRecharge(s.data![index]);
-
-                                  }, icon: Icon(Icons.add))
-                              ),
+                            }, icon: Icon(Icons.add))
                             );
                           }
                       ):CircularProgressIndicator();

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
+import 'package:icbadmin/noticemodel.dart';
 import 'package:icbadmin/rechargemodel.dart';
 
 import 'WithdrawModel.dart';
@@ -52,6 +53,17 @@ class FireBase{
             final y = await store.collection("recharges").doc(doc).delete();
       });
     }
+
+    createNotice(String notice)async{
+
+     final st = await store.collection("notice").add(NoticeModel(notice: notice, valid: false).toJson());
+
+
+    }
+
+   Stream<List<NoticeModel>> collectAllNotice(){
+    return store.collection("notice").snapshots().map((event) => event.docs.map((e) => NoticeModel.fromJson(e.data())).toList());
+   }
 
 
 }
